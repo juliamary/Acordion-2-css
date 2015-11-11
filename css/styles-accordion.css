@@ -1,0 +1,82 @@
+/* Ahora los estilos */
+* {
+	margin: 0; 
+	padding: 0;
+}
+body {
+	background-image: url(../images/bg.jpg); 
+	font-family: arial, verdana, tahoma;
+}
+
+/* Es hora de aplicar anchos para acordeón al trabajo
+Ancho de la imagen = 640px
+imágenes totales = 5
+por lo ancho de la imagen cernía = 640px
+ancho de un-rondado imagen = 40px - se puede establecer esta a nada
+tan ancho total de contenedores = 640 + 40 * 4 = 800px;
+ancho predeterminado = 800/5 = 160px;
+*/
+
+.accordian {
+	width: 805px; height: 320px;
+	overflow: hidden;
+	
+	/*Tiempo durante algún estilo*/
+	margin: 100px auto;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/* Un pequeño truco para evitar el parpadeo en algunos navegadores */
+.accordian ul {
+	width: 2000px;
+	/* Un pequeño truco para evitar el parpadeo en algunos navegadores.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	
+	/* Transiciones para dar efecto de animación */
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/* Si se ciernen sobre las imágenes ahora usted debería ser capaz de
+ver el acordeón básica */
+}
+
+/* Reducir con elementos un-rondado */
+.accordian ul:hover li {width: 40px;}
+/* Permite aplicar efectos de activación ahora */
+/* El estilo libración LI debería obligar un estilo de vuelo estacionario UL */
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+/*Estilos Título de la imagen*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
